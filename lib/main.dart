@@ -51,7 +51,7 @@ class DirectoryApp extends StatelessWidget {
       title: 'Campus Directory',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorSchemeSeed: Colors.teal, // Customization 1: teal theme seed color
+        colorSchemeSeed: Colors.teal, 
         useMaterial3: true,
       ),
       home: const DirectoryScreen(),
@@ -69,11 +69,11 @@ class DirectoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Campus Directory'),
-        backgroundColor: colors.primary, // Customization 2: solid colored AppBar
+        backgroundColor: colors.primary, 
         foregroundColor: colors.onPrimary,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16), // Customization 3: extra spacing around the list
+        padding: const EdgeInsets.all(16), 
         children: [
           const SectionHeader(title: 'Students'),
           const SizedBox(height: 8),
@@ -84,7 +84,7 @@ class DirectoryScreen extends StatelessWidget {
   }
 }
 
-// Stateless: it only displays the title it receives through its constructor.
+
 class SectionHeader extends StatelessWidget {
   final String title;
 
@@ -109,7 +109,7 @@ class SectionHeader extends StatelessWidget {
   }
 }
 
-// Stateless: it shows one icon and one text that are passed in, nothing else.
+
 class InfoRow extends StatelessWidget {
   final IconData icon;
   final String text;
@@ -121,7 +121,7 @@ class InfoRow extends StatelessWidget {
     return Row(
       children: [
         Icon(icon, size: 16, color: Theme.of(context).colorScheme.primary),
-        const SizedBox(width: 6), // small gap between icon and text
+        const SizedBox(width: 6), 
         Expanded(
           child: Text(text, style: const TextStyle(fontSize: 13)),
         ),
@@ -130,7 +130,7 @@ class InfoRow extends StatelessWidget {
   }
 }
 
-// Stateless: it renders the Student it is given; a new Student means the parent builds a new card.
+
 class StudentCard extends StatelessWidget {
   final Student student;
 
@@ -144,7 +144,7 @@ class StudentCard extends StatelessWidget {
       elevation: 3,
       margin: const EdgeInsets.symmetric(vertical: 8),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16), // Customization 4: rounded Card corners
+        borderRadius: BorderRadius.circular(16), 
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -152,7 +152,7 @@ class StudentCard extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 28,
-              backgroundColor: colors.primary, // Customization 5: avatar color
+              backgroundColor: colors.primary, 
               child: Text(
                 student.name[0],
                 style: TextStyle(
@@ -171,7 +171,7 @@ class StudentCard extends StatelessWidget {
                     student.name,
                     style: const TextStyle(
                       fontSize: 18,
-                      fontWeight: FontWeight.bold, // Customization 6: bold name TextStyle
+                      fontWeight: FontWeight.bold, 
                     ),
                   ),
                   Text(
